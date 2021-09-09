@@ -1,19 +1,20 @@
 package com.example.ServiceCurrency.model;
 
 import lombok.Data;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import java.util.HashMap;
 
 @Data
-@Document
+@Entity
 public class Course {
     @Id
-    private ObjectId id;
-    @Indexed
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private int id;
+
     private String name;
 
     private HashMap<String,Double> value;
