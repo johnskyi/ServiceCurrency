@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 @Data
 @AllArgsConstructor
+//POJO to deserialize jsonResponse
 public class CourseGetResponse {
 
     private String disclaimer;

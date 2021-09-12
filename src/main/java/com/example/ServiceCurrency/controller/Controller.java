@@ -2,6 +2,7 @@ package com.example.ServiceCurrency.controller;
 
 
 import com.example.ServiceCurrency.model.CourseGetResponse;
+import com.example.ServiceCurrency.model.Gif;
 import com.example.ServiceCurrency.service.CourseService;
 import com.example.ServiceCurrency.service.GifService;
 import lombok.AllArgsConstructor;
@@ -11,10 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 
@@ -31,7 +29,6 @@ public class Controller {
     private String base;
     @Value("${gifs.apiKey}")
     private String apiKey;
-    private int offset;
 
     @Autowired
     CourseService courseService;
@@ -40,16 +37,20 @@ public class Controller {
     GifService gifService;
 
     // START SERVICE
-    @GetMapping(value = "/api/{symbols}")
+    @GetMapping(value = "/api/{symbols}", produces = "application/json")
     public ResponseEntity startService(@PathVariable("symbols") String symbols) {
         try {
             if (compareCourses(symbols)) {
+                Gif gif = new Gif();
+                gif.setUrl(gif(apiKey, "rich", 1, (int)(1+Math.random() * 100)));
 
-                return ResponseEntity.ok(gif(apiKey, "rich", 1, (int)(1+Math.random() * 100)));
+                return ResponseEntity.ok(gif);
 
             } else if (!compareCourses(symbols)) {
+                Gif gif = new Gif();
+                gif.setUrl(gif(apiKey, "rich", 1, (int)(1+Math.random() * 100)));
 
-                return ResponseEntity.ok(gif(apiKey, "broke", 1, (int)(1+Math.random() * 100)));
+                return ResponseEntity.ok(gif);
             } else {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
             }
