@@ -24,4 +24,9 @@ If you have a paid api key, then the currency of interest must be entered in the
 
 **courses.base: USD**
 ____
+2. Available method
+
+## GET /api/{symbols}  ---- Returns gif depending on the course
+
+{symbols} - Here you need to specify the currency of interest in international encoding (Example RUB, USD, EUR, AUD, etc.)
 
