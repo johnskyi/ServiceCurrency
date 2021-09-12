@@ -7,7 +7,7 @@ if below - from here https://giphy.com/search/broke
 ____
 
 
-1.To start the application, you need to register on the services to provide the api key:
+## 1.To start the application, you need to register on the services to provide the api key:
 
 **https://docs.openexchangerates.org/**
 
@@ -24,9 +24,16 @@ If you have a paid api key, then the currency of interest must be entered in the
 
 **courses.base: USD**
 ____
-2. Available method
+## 2. Pull projects at once
 
-## GET /api/{symbols}  ---- Returns gif depending on the course
+1.Create the servicecurrency root folder in your working space. You can choose another name if you want.
+2.Execute the following git command inside that folder
+
+**git clone https://github.com/johnskyi/ServiceCurrency**
+____
+## 3. Available method
+
+### GET /api/{symbols}  ---- Returns gif depending on the course
 
 {symbols} - Here you need to specify the currency of interest in international encoding (Example RUB, USD, EUR, AUD, etc.)
 
