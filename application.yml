@@ -3,6 +3,8 @@ courses:
   urlCourses: https://openexchangerates.org/api/historical/
   appId: f6ef239b77134d4aa080327d45947e13
   base: USD
-  symbols: RUB
 
 #Gif service
+gifs:
+  urlGifs: https://api.giphy.com/v1/gifs/
+  apiKey: 6QAt1H7Flq17tOOpChp3wVx3Wtoudri1
