@@ -8,11 +8,11 @@ import java.util.HashMap;
 @Data
 @AllArgsConstructor
 //POJO to deserialize jsonResponse
-public class CourseGetResponse {
+public class Course {
 
     private String disclaimer;
     private String license;
     private long timestamp;
     private String base;
-    private HashMap<String,Double> rates;
+    private HashMap<String, Double> rates;
 }
