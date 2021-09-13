@@ -37,26 +37,31 @@ ____
 
 {symbols} - Here you need to specify the currency of interest in international encoding (Example RUB, USD, EUR, AUD, etc.)
 
-##4. Запуск приложения
-Запускать проект можно несколькими способами:
+______
 
-1. Запустить приложение из среды разработки (Например Intellij IDEA) Приложение будет доступно по адресу http://localhost:8080/
+## 4. Application launch
 
-  Приложение будет доступно по адресу http://localhost:8080/
+There are several ways to launch a project:
 
-2. Запустить через терминал\командную строку из корневой папки проекта
+1. Run application from development environment (For example Intellij IDEA)
+
+  The application will be available at http: // localhost: 8080 /
+  
+2. Run via terminal \ command line from the root folder of the project
 
       **java -jar ServiceCurrency-0.0.1-SNAPSHOT.jar**
       
-3. Запустить приложение из docker контейнера
+3. Run application from docker container
  
 **docker push johnskyi/service-currency:0.0.1**
 
-Затем необходимо отредактировать файл application.yml по инструкции выше и запустить контейнер
 
-**docker run -d -p 8080:8080 -v <Здесь путь к вашему файлу настроек >/application.yml:/config/application.yml --name anyname johnskyi/service-currency:latest**
+Then you need to edit the application.yml file according to the instructions above and start the container
 
-Приложение также будет доступно по адресу http://localhost:8080/
+
+**docker run -d -p 8080:8080 -v <Here's the path to your settings file>/application.yml:/config/application.yml --name anyname johnskyi/service-currency:latest**
+
+The app will also be available at http: // localhost: 8080 /
 
 
 ##Enjoy. Thank you for the attention
